@@ -1,0 +1,13 @@
+---
+# Install updated python on centos-8 [ https://www.liquidweb.com/kb/how-to-install-python-3-on-centos-7/ ]
+- name: Download and install python
+  become: yes
+  become_user: "{{ansible_user}}" # assuming the home directory of this user will be the default PWD
+  command: "{{item}}"
+  loop:
+    - "curl -O 'https://www.python.org/ftp/python/{{python_version}}/Python-{{python_version}}.tgz'"
+    - "tar -xzf Python-{{python_version}}.tgz"
+    - "bash -c 'cd Python-{{python_version}}/ && sudo ./configure --enable-optimizations --with-ssl && sudo make install'" # this needs to be in a different console and all commands need CD to be set properly
+    - "sudo cp /usr/bin/python3 /usr/bin/__previous__python3"
+    - "sudo rm -f /usr/bin/python3"
+    - "sudo ln -s '/home/{{ansible_user}}/Python-{{python_version}}/python' /usr/bin/python3"

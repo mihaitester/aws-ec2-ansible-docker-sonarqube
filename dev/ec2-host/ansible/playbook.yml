@@ -1,0 +1,20 @@
+---
+- hosts: all
+  become: true
+  vars_files:
+    - vars/default.yml
+
+  tasks:
+    # - include_tasks: ./python.install.tasks.yml # need to install updated python, rather than use the packages available through yum/apt-get
+
+    - include_tasks: ./docker.install.amazon.tasks.yml
+      when: ansible_facts['distribution'] == "Amazon"
+    
+    - include_tasks: ./docker.install.redhat.tasks.yml
+      when: ansible_facts['distribution'] == "CentOS"
+    
+    - include_tasks: ./docker.install.debian.tasks.yml
+      when: ansible_facts['os_family'] == "Debian"
+      
+    - include_tasks: ./sonarqube.start.tasks.yml
+    - include_tasks: ./reverse-proxy.start.tasks.yml # needs to run after sonarqube.start.tasks.yml

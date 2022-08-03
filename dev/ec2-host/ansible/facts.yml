@@ -1,0 +1,14 @@
+---
+- hosts: all
+  become: true
+  vars_files:
+    - vars/default.yml
+
+  tasks:
+    # - name: Show facts available on the system
+    #   debug:
+    #     var: ansible_facts
+    - name: Copy ansible facts to a file. [ https://stackoverflow.com/questions/63023111/ansible-facts-in-a-single-file ]
+      copy:
+        content: "{{ ansible_facts | to_nice_json(indent=2) }}" # https://docs.ansible.com/ansible/latest/user_guide/playbooks_filters.html
+        dest: /tmp/ansible.facts.json

@@ -1,0 +1,28 @@
+# need to make a playbook to clean up the whole environment of the things set by this playbook
+---
+- hosts: all
+  become: true
+  vars_files:
+    - vars/default.yml
+
+  tasks:
+    - name: Stop created containers
+      command: "{{item}}"
+      loop:
+        - "docker container stop sonarqube_sonarqube_1"
+        - "docker container stop sonarqube_db_1"
+        - "docker container stop reverse-proxy_proxy_1"
+
+    - name: Remove created containers
+      command: "{{item}}"
+      loop:
+        - "docker container rm sonarqube_sonarqube_1"
+        # usually this we want to keep, so that configured static analisys jobs can quickly comence on redeployment
+        # - "docker container rm sonarqube_db_1"
+        - "docker container rm reverse-proxy_proxy_1"
+
+    - name: Remove networks
+      command: "{{item}}"
+      loop:
+        - "docker network rm sonarqube_default"
+        - "docker network rm reverse-proxy_default"

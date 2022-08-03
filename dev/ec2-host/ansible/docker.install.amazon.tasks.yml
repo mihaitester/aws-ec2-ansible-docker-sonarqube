@@ -1,0 +1,52 @@
+---
+# https://docs.aws.amazon.com/AmazonECS/latest/developerguide/docker-basics.html
+# need to make this a role instead, and define a user for all users
+
+# - name: Update yum [ sudo yum update -y ]
+#   become: true
+#   become_user: "{{root_user}}"
+#   command: "sudo yum update -y"
+
+- name: Install docker [ sudo amazon-linux-extras install docker ]
+  become: true
+  become_user: "{{root_user}}"
+  command: "{{item}}"
+  loop: 
+    - "sudo amazon-linux-extras install -y docker" # Amazon Linux 2
+    # - "sudo yum install docker" # Amazon Linux.
+    - "sudo service docker start"
+    - "sudo chkconfig docker on" # Autostart docker: https://gist.github.com/npearce/6f3c7826c7499587f00957fee62f8ee9
+
+- name: Add user ec2-user to docker group [ sudo usermod -a -G docker ec2-user ]
+  become: true
+  become_user: "{{root_user}}"
+  command: "sudo usermod -a -G docker ec2-user"
+
+- name: Check ec2-user has access [ docker info ]
+  command: docker info # Cannot connect to the Docker daemon. Is the docker daemon running on this host?
+
+- name: Install docker compose 
+  become: true
+  become_user: "{{root_user}}"
+  command: "{{item}}"
+  loop:
+    - "sudo bash -c 'curl -L https://github.com/docker/compose/releases/latest/download/docker-compose-$(uname -s)-$(uname -m) -o /usr/local/bin/docker-compose'"
+    - "sudo chmod +x /usr/local/bin/docker-compose"
+    - "/usr/local/bin/docker-compose version" # need to use full path, because root user's $PATH does not include /usr/local/bin
+  
+- name: Fix docker daemon socket permission [ sudo chmod 666 /var/run/docker.sock ]
+  become: true
+  become_user: "{{root_user}}"
+  command: "{{item}}"
+  loop:
+    # - "sudo systemctl stop docker"
+    - "sudo chmod 666 /var/run/docker.sock" # AVOID: [centos] chmod: cannot access '/var/run/docker.sock': No such file or directory
+    # - "sudo systemctl start docker"
+
+# - name: Troubleshooting files
+#   become: true
+#   become_user: "{{root_user}}"
+#   command: "{{item}}"
+#   loop:
+#     - "python3 -m pip freeze > /home/{{ansible_user}}/pip.freeze.txt"
+#     - "yum list installed > /home/{{ansible_user}}/yum.list.installed.txt"

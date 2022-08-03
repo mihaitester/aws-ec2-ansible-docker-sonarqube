@@ -1,0 +1,20 @@
+---
+# TODO: configure a reverse proxy with NGINX so that SSL/https connections will work properly
+- name: Start reverse-proxy container [ cd ./reverse-proxy && docker-compose up -d && cd .. ]
+  command: "{{item}}"
+  become: true
+  become_user: "{{ansible_user}}"
+  loop: 
+    - "bash -c 'sudo chmod +x ./reverse-proxy/start-docker.sh'"
+    - "bash ./reverse-proxy/start-docker.sh"
+
+# https://docs.docker.com/engine/reference/commandline/network_create/
+- name: Connect docker network of the proxy_frontend to the sonarqube_frontend
+  command: "{{item}}"
+  become: true
+  become_user: "{{ansible_user}}"
+  loop:
+    # - "docker network connect reverse-proxy_frontend sonarqube_sonarqube_1"
+    - "docker network connect sonarqube_default reverse-proxy_proxy_1"
+    # - "docker network connect reverse-proxy_default sonarqube_sonarqube_1"
+    # - "docker network connect host reverse-proxy_proxy_1"

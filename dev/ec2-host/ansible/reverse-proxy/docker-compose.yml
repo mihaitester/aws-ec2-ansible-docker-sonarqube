@@ -1,0 +1,23 @@
+version: '3'
+
+# https://docs.docker.com/compose/compose-file/compose-file-v3/#image
+services:
+  proxy:
+    build: 
+      context: .
+      dockerfile: Dockerfile
+      # command: "bash ./start-proxy.sh" # cannot run necessary command in this file, need to configure the host from outside this folder
+    # networks:
+    #   - host
+    #   - frontend
+    ports:
+      # - 80:80 # hide the http:// interface
+      # - 443:443
+      - 443:443
+
+# need to connect the networks instead of create multiple ones
+# networks:
+#   host:
+#     driver: host
+#   frontend:
+#     driver: bridge

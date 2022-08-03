@@ -1,0 +1,18 @@
+2021.09.01 08:31:48 INFO  app[][o.s.a.AppFileSystem] Cleaning or creating temp directory /opt/sonarqube/temp
+2021.09.01 08:31:48 INFO  app[][o.s.a.es.EsSettings] Elasticsearch listening on [HTTP: 127.0.0.1:9001, TCP: 127.0.0.1:38889]
+2021.09.01 08:31:48 INFO  app[][o.s.a.ProcessLauncherImpl] Launch process[[key='es', ipcIndex=1, logFilenamePrefix=es]] from [/opt/sonarqube/elasticsearch]: /opt/sonarqube/elasticsearch/bin/elasticsearch
+2021.09.01 08:31:49 INFO  app[][o.s.a.SchedulerImpl] Waiting for Elasticsearch to be up and running
+warning: no-jdk distributions that do not bundle a JDK are deprecated and will be removed in a future release
+OpenJDK 64-Bit Server VM warning: Option UseConcMarkSweepGC was deprecated in version 9.0 and will likely be removed in a future release.
+2021.09.01 08:32:21 INFO  es[][o.e.n.Node] version[7.12.1], pid[31], build[default/tar/3186837139b9c6b6d23c3200870651f10d3343b7/2021-04-20T20:56:39.040728659Z], OS[Linux/4.14.198-152.320.amzn2.x86_64/amd64], JVM[AdoptOpenJDK/OpenJDK 64-Bit Server VM/11.0.11/11.0.11+9]
+2021.09.01 08:32:21 INFO  es[][o.e.n.Node] JVM home [/opt/java/openjdk]
+2021.09.01 08:32:21 INFO  es[][o.e.n.Node] JVM arguments [-XX:+UseConcMarkSweepGC, -XX:CMSInitiatingOccupancyFraction=75, -XX:+UseCMSInitiatingOccupancyOnly, -Djava.io.tmpdir=/opt/sonarqube/temp, -XX:ErrorFile=../logs/es_hs_err_pid%p.log, -Des.networkaddress.cache.ttl=60, -Des.networkaddress.cache.negative.ttl=10, -XX:+AlwaysPreTouch, -Xss1m, -Djava.awt.headless=true, -Dfile.encoding=UTF-8, -Djna.nosys=true, -XX:-OmitStackTraceInFastThrow, -Dio.netty.noUnsafe=true, -Dio.netty.noKeySetOptimization=true, -Dio.netty.recycler.maxCapacityPerThread=0, -Dio.netty.allocator.numDirectArenas=0, -Dlog4j.shutdownHookEnabled=false, -Dlog4j2.disable.jmx=true, -Djava.locale.providers=COMPAT, -Des.enforce.bootstrap.checks=true, -Xmx512m, -Xms512m, -XX:MaxDirectMemorySize=256m, -XX:+HeapDumpOnOutOfMemoryError, -Des.path.home=/opt/sonarqube/elasticsearch, -Des.path.conf=/opt/sonarqube/temp/conf/es, -Des.distribution.flavor=default, -Des.distribution.type=tar, -Des.bundled_jdk=false]
+2021.09.01 08:32:28 INFO  es[][o.e.p.PluginsService] loaded module [analysis-common]
+2021.09.01 08:32:28 INFO  es[][o.e.p.PluginsService] loaded module [lang-painless]
+2021.09.01 08:32:28 INFO  es[][o.e.p.PluginsService] loaded module [parent-join]
+2021.09.01 08:32:28 INFO  es[][o.e.p.PluginsService] loaded module [percolator]
+2021.09.01 08:32:28 INFO  es[][o.e.p.PluginsService] loaded module [transport-netty4]
+2021.09.01 08:32:28 INFO  es[][o.e.p.PluginsService] no plugins loaded
+2021.09.01 08:32:29 INFO  es[][o.e.e.NodeEnvironment] using [1] data paths, mounts [[/opt/sonarqube/data (/dev/sda1)]], net usable_space [20.4gb], net total_space [24.9gb], types [xfs]
+2021.09.01 08:32:29 INFO  es[][o.e.e.NodeEnvironment] heap size [503.6mb], compressed ordinary object pointers [true]
+2021.09.01 08:32:31 INFO  es[][o.e.n.Node] node name [sonarqube], node ID [WKddcRFsQZGuT2Je-DhIYg], cluster name [sonarqube], roles [master, remote_cluster_client, data, ingest]

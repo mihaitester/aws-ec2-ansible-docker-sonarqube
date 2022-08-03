@@ -1,0 +1,258 @@
+[
+    {
+        "Id": "2793f6664b9aef576569437c7a6ab519cc132767242a2b749fe4cfa7a438a761",
+        "Created": "2021-09-01T08:31:34.715325724Z",
+        "Path": "docker-entrypoint.sh",
+        "Args": [
+            "postgres"
+        ],
+        "State": {
+            "Status": "running",
+            "Running": true,
+            "Paused": false,
+            "Restarting": false,
+            "OOMKilled": false,
+            "Dead": false,
+            "Pid": 19188,
+            "ExitCode": 0,
+            "Error": "",
+            "StartedAt": "2021-09-01T08:31:37.145740084Z",
+            "FinishedAt": "0001-01-01T00:00:00Z"
+        },
+        "Image": "sha256:14566088fc000f09db0a67b267f7de82a1a1a0d45d6a0a023ab580b084be62a8",
+        "ResolvConfPath": "/var/lib/docker/containers/2793f6664b9aef576569437c7a6ab519cc132767242a2b749fe4cfa7a438a761/resolv.conf",
+        "HostnamePath": "/var/lib/docker/containers/2793f6664b9aef576569437c7a6ab519cc132767242a2b749fe4cfa7a438a761/hostname",
+        "HostsPath": "/var/lib/docker/containers/2793f6664b9aef576569437c7a6ab519cc132767242a2b749fe4cfa7a438a761/hosts",
+        "LogPath": "/var/lib/docker/containers/2793f6664b9aef576569437c7a6ab519cc132767242a2b749fe4cfa7a438a761/2793f6664b9aef576569437c7a6ab519cc132767242a2b749fe4cfa7a438a761-json.log",
+        "Name": "/sonarqube_db_1",
+        "RestartCount": 0,
+        "Driver": "overlay2",
+        "Platform": "linux",
+        "MountLabel": "",
+        "ProcessLabel": "",
+        "AppArmorProfile": "",
+        "ExecIDs": null,
+        "HostConfig": {
+            "Binds": [
+                "sonarqube_postgresql_data:/var/lib/postgresql/data:rw",
+                "sonarqube_postgresql:/var/lib/postgresql:rw"
+            ],
+            "ContainerIDFile": "",
+            "LogConfig": {
+                "Type": "json-file",
+                "Config": {}
+            },
+            "NetworkMode": "sonarqube_default",
+            "PortBindings": {},
+            "RestartPolicy": {
+                "Name": "",
+                "MaximumRetryCount": 0
+            },
+            "AutoRemove": false,
+            "VolumeDriver": "",
+            "VolumesFrom": [],
+            "CapAdd": null,
+            "CapDrop": null,
+            "CgroupnsMode": "host",
+            "Dns": null,
+            "DnsOptions": null,
+            "DnsSearch": null,
+            "ExtraHosts": null,
+            "GroupAdd": null,
+            "IpcMode": "private",
+            "Cgroup": "",
+            "Links": null,
+            "OomScoreAdj": 0,
+            "PidMode": "",
+            "Privileged": false,
+            "PublishAllPorts": false,
+            "ReadonlyRootfs": false,
+            "SecurityOpt": null,
+            "UTSMode": "",
+            "UsernsMode": "",
+            "ShmSize": 67108864,
+            "Runtime": "runc",
+            "ConsoleSize": [
+                0,
+                0
+            ],
+            "Isolation": "",
+            "CpuShares": 0,
+            "Memory": 0,
+            "NanoCpus": 0,
+            "CgroupParent": "",
+            "BlkioWeight": 0,
+            "BlkioWeightDevice": null,
+            "BlkioDeviceReadBps": null,
+            "BlkioDeviceWriteBps": null,
+            "BlkioDeviceReadIOps": null,
+            "BlkioDeviceWriteIOps": null,
+            "CpuPeriod": 0,
+            "CpuQuota": 0,
+            "CpuRealtimePeriod": 0,
+            "CpuRealtimeRuntime": 0,
+            "CpusetCpus": "",
+            "CpusetMems": "",
+            "Devices": null,
+            "DeviceCgroupRules": null,
+            "DeviceRequests": null,
+            "KernelMemory": 0,
+            "KernelMemoryTCP": 0,
+            "MemoryReservation": 0,
+            "MemorySwap": 0,
+            "MemorySwappiness": null,
+            "OomKillDisable": false,
+            "PidsLimit": null,
+            "Ulimits": [
+                {
+                    "Name": "nofile",
+                    "Hard": 65536,
+                    "Soft": 32768
+                }
+            ],
+            "CpuCount": 0,
+            "CpuPercent": 0,
+            "IOMaximumIOps": 0,
+            "IOMaximumBandwidth": 0,
+            "MaskedPaths": [
+                "/proc/asound",
+                "/proc/acpi",
+                "/proc/kcore",
+                "/proc/keys",
+                "/proc/latency_stats",
+                "/proc/timer_list",
+                "/proc/timer_stats",
+                "/proc/sched_debug",
+                "/proc/scsi",
+                "/sys/firmware"
+            ],
+            "ReadonlyPaths": [
+                "/proc/bus",
+                "/proc/fs",
+                "/proc/irq",
+                "/proc/sys",
+                "/proc/sysrq-trigger"
+            ]
+        },
+        "GraphDriver": {
+            "Data": {
+                "LowerDir": "/var/lib/docker/overlay2/9ff59283fe85cba9b29150cf30d2f1d27884e48056033de4830fa94bfa7e22ce-init/diff:/var/lib/docker/overlay2/0536313c230ef10749707099ee8ee1c9b5fa4f69815e5bf3020def35f2141786/diff:/var/lib/docker/overlay2/ea2d30b3e72882b7b1d0be0ed523b6d09365897329d7afd3bf159e6d4b03433d/diff:/var/lib/docker/overlay2/5b0284a7b243209bd627e7c953d6b29b47f9f13f162483acafb714379673da49/diff:/var/lib/docker/overlay2/c5eabbd302ba834f03dc96c64f82c1911fa5aa35016b9565bc0186245ac3c106/diff:/var/lib/docker/overlay2/35c1333365cf11401f99efd36dfba01add80f65fef6d7f2d1c9f47ae30e11f9d/diff:/var/lib/docker/overlay2/09d0f6154cf97799b63b7825bddd40ea96fef0fd5797d9a5bb5b9197adf8e364/diff:/var/lib/docker/overlay2/810dd0ea01dd937e117eba17dfc98803d917c7d947279c2488c51489602651ea/diff:/var/lib/docker/overlay2/d71533f2f8d41445615cb75007a054bcaa1d6bdce902335f4298401dc05a6392/diff:/var/lib/docker/overlay2/2096f89b75a386e1ac0bec581181b0e68772d4ad77b81f7ce79832a2b38c5bc1/diff:/var/lib/docker/overlay2/5b2b43056ce4ebfdf26da871ffbff888da61076632bdfa02e5c95ef2ac8e2fe4/diff:/var/lib/docker/overlay2/6f18d54b4dc0dc09bbddef55c4dc93a5c8092bd3b0ffb4cc821318ba24484f55/diff:/var/lib/docker/overlay2/d3fefa68905fdb5a55c3d30199d00bffc19400b1fb7c8ffa36fb3f67a9e806de/diff:/var/lib/docker/overlay2/37fa0836cea35cc4b8db0377a0e271fd8ffee502e3333a60c2f2bbb1edd08e7f/diff",
+                "MergedDir": "/var/lib/docker/overlay2/9ff59283fe85cba9b29150cf30d2f1d27884e48056033de4830fa94bfa7e22ce/merged",
+                "UpperDir": "/var/lib/docker/overlay2/9ff59283fe85cba9b29150cf30d2f1d27884e48056033de4830fa94bfa7e22ce/diff",
+                "WorkDir": "/var/lib/docker/overlay2/9ff59283fe85cba9b29150cf30d2f1d27884e48056033de4830fa94bfa7e22ce/work"
+            },
+            "Name": "overlay2"
+        },
+        "Mounts": [
+            {
+                "Type": "volume",
+                "Name": "sonarqube_postgresql_data",
+                "Source": "/var/lib/docker/volumes/sonarqube_postgresql_data/_data",
+                "Destination": "/var/lib/postgresql/data",
+                "Driver": "local",
+                "Mode": "rw",
+                "RW": true,
+                "Propagation": ""
+            },
+            {
+                "Type": "volume",
+                "Name": "sonarqube_postgresql",
+                "Source": "/var/lib/docker/volumes/sonarqube_postgresql/_data",
+                "Destination": "/var/lib/postgresql",
+                "Driver": "local",
+                "Mode": "rw",
+                "RW": true,
+                "Propagation": ""
+            }
+        ],
+        "Config": {
+            "Hostname": "2793f6664b9a",
+            "Domainname": "",
+            "User": "",
+            "AttachStdin": false,
+            "AttachStdout": false,
+            "AttachStderr": false,
+            "ExposedPorts": {
+                "5432/tcp": {}
+            },
+            "Tty": false,
+            "OpenStdin": false,
+            "StdinOnce": false,
+            "Env": [
+                "POSTGRES_USER=sonar",
+                "POSTGRES_PASSWORD=sonar",
+                "PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/lib/postgresql/12/bin",
+                "GOSU_VERSION=1.12",
+                "LANG=en_US.utf8",
+                "PG_MAJOR=12",
+                "PG_VERSION=12.8-1.pgdg100+1",
+                "PGDATA=/var/lib/postgresql/data"
+            ],
+            "Cmd": [
+                "postgres"
+            ],
+            "Image": "postgres:12",
+            "Volumes": {
+                "/var/lib/postgresql": {},
+                "/var/lib/postgresql/data": {}
+            },
+            "WorkingDir": "",
+            "Entrypoint": [
+                "docker-entrypoint.sh"
+            ],
+            "OnBuild": null,
+            "Labels": {
+                "com.docker.compose.config-hash": "12f77a7274a2df37c035612719ffee5007fcfe44f315b40876d9e508f097b568",
+                "com.docker.compose.container-number": "1",
+                "com.docker.compose.oneoff": "False",
+                "com.docker.compose.project": "sonarqube",
+                "com.docker.compose.project.config_files": "docker-compose.yml",
+                "com.docker.compose.project.working_dir": "/home/vagrant/aws-ec2-ansible-docker-sonarqube/dev/ec2-host/ansible/sonarqube",
+                "com.docker.compose.service": "db",
+                "com.docker.compose.version": "1.29.2"
+            },
+            "StopSignal": "SIGINT"
+        },
+        "NetworkSettings": {
+            "Bridge": "",
+            "SandboxID": "a7512fd1d16b77a97df688574528bbc9530f5294be0a5d0533a4fd3318061035",
+            "HairpinMode": false,
+            "LinkLocalIPv6Address": "",
+            "LinkLocalIPv6PrefixLen": 0,
+            "Ports": {
+                "5432/tcp": null
+            },
+            "SandboxKey": "/var/run/docker/netns/a7512fd1d16b",
+            "SecondaryIPAddresses": null,
+            "SecondaryIPv6Addresses": null,
+            "EndpointID": "",
+            "Gateway": "",
+            "GlobalIPv6Address": "",
+            "GlobalIPv6PrefixLen": 0,
+            "IPAddress": "",
+            "IPPrefixLen": 0,
+            "IPv6Gateway": "",
+            "MacAddress": "",
+            "Networks": {
+                "sonarqube_default": {
+                    "IPAMConfig": null,
+                    "Links": null,
+                    "Aliases": [
+                        "2793f6664b9a",
+                        "db"
+                    ],
+                    "NetworkID": "cf58eada753d5127db9e03280be4f6ac7c9cc8416d2f91042896138fe7e91cf0",
+                    "EndpointID": "c28d023a30c7d18d7aefbd3d412de0c83fe6ef0ac3f3872eed0dce8bb8b20683",
+                    "Gateway": "172.18.0.1",
+                    "IPAddress": "172.18.0.2",
+                    "IPPrefixLen": 16,
+                    "IPv6Gateway": "",
+                    "GlobalIPv6Address": "",
+                    "GlobalIPv6PrefixLen": 0,
+                    "MacAddress": "02:42:ac:12:00:02",
+                    "DriverOpts": null
+                }
+            }
+        }
+    }
+]

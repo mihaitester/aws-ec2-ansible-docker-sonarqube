@@ -1,0 +1,4 @@
+CONTAINER ID   IMAGE                 COMMAND                  CREATED          STATUS          PORTS                                           NAMES
+f3ba4dc6a009   reverse-proxy_proxy   "/docker-entrypoint.…"   9 seconds ago    Up 7 seconds    80/tcp, 0.0.0.0:443->443/tcp, :::443->443/tcp   reverse-proxy_proxy_1
+7d09ffa41922   sonarqube:community   "bin/run.sh bin/sona…"   27 seconds ago   Up 26 seconds   0.0.0.0:9000->9000/tcp, :::9000->9000/tcp       sonarqube_sonarqube_1
+a9a30161f570   postgres:12           "docker-entrypoint.s…"   28 seconds ago   Up 27 seconds   5432/tcp                                        sonarqube_db_1

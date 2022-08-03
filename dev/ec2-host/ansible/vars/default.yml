@@ -1,0 +1,5 @@
+---
+ansible_user: user
+root_user: root
+python_version: 3.9.6
+# ansible_python_interpreter: auto
