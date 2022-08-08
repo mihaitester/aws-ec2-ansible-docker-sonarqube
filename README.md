@@ -139,7 +139,7 @@ This folder contains some split folders, on one side some code that will be exec
 
         sudo $(which apt-get || which yum) install -y git && \
         rm -rf ./aws-ec2-ansible-docker-sonarqube && \
-        git clone https://github.com/headshot4good/aws-ec2-ansible-docker-sonarqube.git && \
+        git clone https://github.com/mihaitester/aws-ec2-ansible-docker-sonarqube.git && \
         chmod +x ./aws-ec2-ansible-docker-sonarqube/dev/ec2-host/start-ansible.sh && \
         ./aws-ec2-ansible-docker-sonarqube/dev/ec2-host/start-ansible.sh 
 
